@@ -2,16 +2,17 @@ def process_image():
     #Loading libraries
     import cv2
     import numpy as np
+    import matplotlib
+    matplotlib.use('TkAgg')
     import matplotlib.pyplot as plt
     import pandas as pd
-    import os
+    import os, time
     from scipy import ndimage
     import math
     import keras
     import ast
     import operator as op
     import re
-
 
     #Global Variable
     dict_clean_img = {} #BINARY IMAGE DICTIONAY
@@ -708,7 +709,7 @@ def process_image():
             plt.figure(figsize=(15,8))   
 
             plt.axis("on")
-            plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+            # plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
             # plt.show()
 
         return [box_num,line_name,df_char]
@@ -728,7 +729,7 @@ def process_image():
 
     img = cv2.imread(image_path)
     plt.figure(figsize=(12,12))
-    plt.imshow(img)
+    # plt.imshow(img)
 
 
     #6th reference
@@ -821,6 +822,6 @@ def process_image():
 
         plt.figure(figsize=(13,7))
         plt.title('Box - %d' %(bn+1) )
-        plt.imshow(cv2.cvtColor(box_img_1, cv2.COLOR_BGR2RGB))
+        # plt.imshow(cv2.cvtColor(box_img_1, cv2.COLOR_BGR2RGB))
         # plt.figure()
-        plt.savefig("./upload/final.png")
+        cv2.imwrite("./upload/final.png",cv2.cvtColor(box_img_1, cv2.COLOR_BGR2RGB))
