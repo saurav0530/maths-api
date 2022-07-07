@@ -3,8 +3,6 @@ import threading
 from urllib import response
 from flask import Flask, request, send_file, jsonify
 
-
-processing_image = False
 app = Flask(__name__)
 UPLOAD_FOLDER = './upload'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -22,13 +20,15 @@ def upload_files():
             )
         
         file = request.form['image']
+        autocrop = request.form['autocrop']
+        print(autocrop)
         imgdata = base64.b64decode(file)
         filename = 'upload/image_13.jpg'  
         with open(filename, 'wb') as f:
             f.write(imgdata)
 
         return jsonify(
-                response = 'Saved ✔☑✅'
+                response = 'Uploaded...'
             )
     return '''
     <h1>Upload new File</h1>
@@ -40,11 +40,18 @@ def upload_files():
     
 @app.route('/result')
 def send_result():
+    filepath = ".\\upload\\final.png"
+    if(os.path.exists(filepath)):
+        os.remove(filepath)
+
     t = threading.Thread(target=process.process_image)
     t.setDaemon(True)
     t.start()
     t.join()
-    return send_file(os.path.join('.\\upload', 'final.png'))
+    
+    if(os.path.exists(filepath)):
+        return send_file(os.path.join('.\\upload', 'final.png'))
+    return send_file(os.path.join('.\\upload', 'error.png'))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8000)
