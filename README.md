@@ -1,4 +1,13 @@
-# MATHS-API
+# <b>MATHS-API</b>
+
+## Folder Description
+* app.py &#8594; Contains flask server codes
+* process.py &#8594; Contains codes for processing request
+* samsung.apk &#8594; Android app apk file
+* DCNN_10AD_sy.h5 &#8594; Model for extracting characters
+* Upload &#8594; Folder containg all uploaded and generated files
+<br/>
+<br/>
 
 ## Setup
 1. Install anaconda.
@@ -16,6 +25,7 @@
    ```
 4. Server will be up at port 8000.
 
+<br/>
 <br/>
 
 ## Use of ngrok to make localhost publicly accessible
@@ -41,4 +51,4 @@
 <br/>
 <br/>
 
-## <b>All set now. Move to android app to start processing request.</b>
+### <b>All set now. Move to android app to start processing request.</b>
