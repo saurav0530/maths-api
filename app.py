@@ -20,8 +20,6 @@ def upload_files():
             )
         
         file = request.form['image']
-        autocrop = request.form['autocrop']
-        print(autocrop)
         imgdata = base64.b64decode(file)
         filename = 'upload/input.jpg'  
         with open(filename, 'wb') as f:
