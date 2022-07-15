@@ -7,7 +7,7 @@
 * DCNN_10AD_sy.h5 &#8594; Model for extracting characters
 * Upload &#8594; Folder containg all uploaded and generated files
 * version_2 &#8594; Folder containg all updates of last week work
-<br/>
+    <br/><b>N.B.</b>- For version_2, there is no app. To use the updates run the main1.ipynb file in collab.
 <br/>
 
 ## Setup
@@ -26,7 +26,6 @@
    ```
 4. Server will be up at port 8000.
 
-<br/>
 <br/>
 
 ## Use of ngrok to make localhost publicly accessible
@@ -52,4 +51,12 @@
 <br/>
 <br/>
 
-### <b>All set now. Move to android app to start processing request.</b>
+### <u>All set now. Move to android app to start processing request.</u>
+
+<br/>
+
+
+## Authors
+* Krishna
+* Vikram
+* Saurav
