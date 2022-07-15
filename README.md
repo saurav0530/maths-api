@@ -6,6 +6,7 @@
 * samsung.apk &#8594; Android app apk file
 * DCNN_10AD_sy.h5 &#8594; Model for extracting characters
 * Upload &#8594; Folder containg all uploaded and generated files
+* version_2 &#8594; Folder containg all updates of last week work
 <br/>
 <br/>
 
